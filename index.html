@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live DrawBook</title>
+    <link rel="stylesheet" href="design.css" />
+  </head>
+  <body>
+    <div class="whoisdrawing">Jaagrav is drawing...</div>
+    <div class="container">
+      <div class="block-drawing"></div>
+      <canvas class="drawing-area"></canvas>
+    </div>
+    <div class="tools">
+      <img
+        src="https://static.thenounproject.com/png/185928-200.png"
+        class="penActive"
+        style="border: 2px solid #000;"
+      />
+      <img
+        src="https://images.vexels.com/media/users/3/140154/isolated/preview/87d9e81f504b2034f3f816a121e3fa27-eraser-icon-by-vexels.png"
+        class="eraserActive"
+      />
+      <img
+        src="https://cdn.onlinewebfonts.com/svg/img_88929.png"
+        class="clearAll"
+        onclick="firebase.database().ref('Drawing Book/Room324364/Cood').remove();firebase.database().ref('Drawing Book/Room324364/Reload').push('Reload Bitch');"
+      />
+      <input type="color" class="colorSelect" />
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBSO1l02gRubi7mZnIWhkxMcuXE-oMu33g",
+        authDomain: "converse-dd75d.firebaseapp.com",
+        databaseURL: "https://converse-dd75d.firebaseio.com",
+        projectId: "converse-dd75d",
+        storageBucket: "converse-dd75d.appspot.com",
+        messagingSenderId: "984079997699",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="app.js"></script>
+  </body>
+</html>
